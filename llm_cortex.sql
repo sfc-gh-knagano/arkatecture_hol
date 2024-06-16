@@ -1,3 +1,5 @@
+select * from survey_transcripts:
+
 select transcript, snowflake.cortex.sentiment(???) 
 from survey_transcripts;
 
