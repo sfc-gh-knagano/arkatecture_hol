@@ -35,11 +35,11 @@ def sentiment_analysis():
         if entered_text:
             entered_text = entered_text.replace("'", "\\'")
 
-            cortex_response = session.sql(f"select rep_id, transcript, snowflake.cortex.sentiment(transcript) from survey_transcripts;").to_pandas()
+            cortex_response = session.sql(f"select rep_id, transcript, snowflake.cortex.???(transcript) from ???;").to_pandas()
             st.caption("Score is between -1 and 1; -1 = Most negative, 1 = Positive, 0 = Neutral")  
             st.write(cortex_response)
 
-            response_for_graph = session.sql(f"SELECT rep_id, AVG(snowflake.cortex.sentiment(transcript)) AS avg_sentiment FROM survey_transcripts GROUP BY rep_id;").to_pandas()  
+            response_for_graph = session.sql(f"SELECT rep_id, AVG(snowflake.cortex.???(transcript)) AS avg_sentiment FROM ??? GROUP BY rep_id;").to_pandas()  
 
             positive_color = 'Positive'
             negative_color = 'Negative'
@@ -82,7 +82,7 @@ def summarize():
             entered_text = entered_text.replace("'", "\\'")
             prompt = f"Summarize this transcript in less than 100 words. Put the industry, compliments, complaints and summary in JSON format: {entered_text}"
             cortex_prompt = "'[INST] " + prompt + " [/INST]'"
-            cortex_response = session.sql(f"select snowflake.cortex.complete('{selected_llm}', {cortex_prompt}) as response").to_pandas().iloc[0]['RESPONSE']
+            cortex_response = session.sql(f"select snowflake.cortex.???('{selected_llm}', {cortex_prompt}) as response").to_pandas().iloc[0]['RESPONSE']
             if selected_llm != 'gemma-7b':
                 st.json(cortex_response)
             else:
