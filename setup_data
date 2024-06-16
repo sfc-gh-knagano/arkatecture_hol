@@ -1,0 +1,20 @@
+
+USE ROLE accountadmin;
+CREATE OR REPLACE DATABASE HOL;
+USE SCHEMA PUBLIC;
+CREATE or replace TABLE survey_transcripts (
+    date_created DATE,
+    rep_id STRING,
+    transcript STRING
+);
+
+INSERT INTO survey_transcripts (date_created, rep_id, transcript)
+VALUES
+    ('2024-04-01', '001', 'I had an excellent experience applying for a mortgage with your bank. The staff was extremely helpful and guided me through every step of the process. The application was approved quickly, and I received a great interest rate. I am very satisfied with the service and will recommend your bank to my friends and family.'),
+    ('2024-04-02', '002', 'I am very disappointed with the service I received when trying to open a savings account. The process was slow, and the staff seemed uninterested in helping me. I had to visit the branch multiple times to get the account set up, which was very frustrating. I expected better service from your bank.'),
+    ('2024-04-03', '003', 'I recently opened a savings account with your bank and had a wonderful experience. The staff was friendly and efficient, and the whole process was quick and easy. I am happy with the interest rate offered and the online banking features. Thank you for providing such great service.'),
+    ('2024-04-04', '004', 'I had a terrible experience applying for a mortgage with your bank. The staff was unhelpful, and the process took much longer than expected. I was given conflicting information about the required documents, which caused unnecessary delays. This experience has left me very frustrated.'),
+    ('2024-04-05', '001', 'Opening a savings account at your bank was a pleasant experience. The staff was knowledgeable and answered all my questions. The account features are excellent, and I am very satisfied with the service I received. I will definitely consider your bank for other financial services in the future.'),
+    ('2024-04-06', '002', 'I had an awful experience with your bank when applying for a mortgage. The customer service was poor, and I felt like my concerns were not taken seriously. The process was disorganized, and I had to repeatedly provide the same documents. This has been a very stressful experience for me.'),
+    ('2024-04-07', '003', 'I recently applied for a mortgage with your bank and had a fantastic experience. The staff was professional and made the process smooth and stress-free. I received regular updates on the status of my application, and everything was handled efficiently. I am very happy with the service provided.'),
+    ('2024-04-08', '004', 'I had a great experience opening a savings account with your bank. The process was straightforward, and the staff was very helpful. I am pleased with the account features and the excellent customer service I received. I would highly recommend your bank to others.');
